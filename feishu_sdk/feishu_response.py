@@ -8,7 +8,7 @@ CODE, MSG, DATA = "code", "msg", "data"
 
 
 class FeishuResponse:
-    def __init__(self, code:int, msg:str, data:object=None):
+    def __init__(self, code: int, msg: str, data: object = None):
         self._code = code
         self._msg = msg
         self._data = data
@@ -20,7 +20,7 @@ class FeishuResponse:
     @code.setter
     def code(self, code):
         self._code = code
-    
+
     @property
     def msg(self):
         return self._msg
@@ -28,11 +28,11 @@ class FeishuResponse:
     @msg.setter
     def msg(self, msg):
         self._msg = msg
-    
+
     @property
     def data(self):
         return self._data
-    
+
     @data.setter
     def data(self, data):
         self._data = data
@@ -41,10 +41,11 @@ class FeishuResponse:
         return f"FeishuResponse[code={self.code} msg={self.msg} data={self.data}]"
 
 
-def error(e:Exception):
+def error(e: Exception):
     return FeishuResponse(ERROR_CODE, str(e), {})
 
-def of(resp:dict) -> FeishuResponse:
+
+def of(resp: dict) -> FeishuResponse:
     fr = FeishuResponse(resp.get(CODE, ERROR_CODE), resp.get(MSG, ERROR_MSG), {})
     if DATA in resp:
         fr.data = resp[DATA]

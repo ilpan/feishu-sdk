@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from feishu_sdk.card.objects import ConfirmObj, OptionObj, TextObj, UrlObj
 from typing import List, Optional
+
+from feishu_sdk.card.objects import ConfirmObj, OptionObj, TextObj, UrlObj
 
 
 class Element:
@@ -56,10 +57,7 @@ class SelectMenuEle(Element):
 
 
 class OverflowEle(Element):
-    def __init__(self,
-                 options: List[OptionObj],
-                 value: dict = None,
-                 confirm: ConfirmObj = None):
+    def __init__(self, options: List[OptionObj], value: dict = None, confirm: ConfirmObj = None):
         super().__init__("overflow")
         self.options = options
         self.value = value

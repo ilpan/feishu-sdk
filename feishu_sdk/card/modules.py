@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from typing import List, Optional, Union
+
 from feishu_sdk.card.elements import Element, ImgEle
 from feishu_sdk.card.objects import FieldObj, TextObj
-from typing import List, Optional, Union
 
 
 class Module:
@@ -12,10 +13,7 @@ class Module:
 
 
 class DivModule(Module):
-    def __init__(self,
-                 text: TextObj,
-                 fields: List[FieldObj] = None,
-                 extra: Optional[Element] = None):
+    def __init__(self, text: TextObj, fields: List[FieldObj] = None, extra: Optional[Element] = None):
         super().__init__("div")
         self.text = text
         self.fields = fields
@@ -32,12 +30,7 @@ class ImgModule(Module):
     Attributes:
         mode: “fit_horizontal”, “crop_center”
     """
-    def __init__(self,
-                 img_key: str,
-                 alt: TextObj,
-                 title: TextObj = None,
-                 mode: str = None,
-                 preview: bool = True):
+    def __init__(self, img_key: str, alt: TextObj, title: TextObj = None, mode: str = None, preview: bool = True):
         super().__init__("img")
         self.img_key = img_key
         self.alt = alt

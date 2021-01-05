@@ -1,4 +1,4 @@
-TEST_APP_ID = "cli_9f6a16b988f9d00b"
-TEST_APP_SECRET = "8yDyBghda0eJVbgTUajETdrINHpUQ7uW"
-TEST_OPEN_ID = "ou_4791f8840b33284f5faaddb7a87d3cdb"
+TEST_APP_ID = "xxx"
+TEST_APP_SECRET = "xxx"
+TEST_OPEN_ID = "ou_xxx"
 TEST_CHAT_ID = "oc_xxx"
